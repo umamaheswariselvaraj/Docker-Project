@@ -1,8 +1,8 @@
 pipeline {
 
   environment {
-    registry = "docker.io/cubensquare/flask"
-    registry_mysql = "docker.io/cubensquare/mysql"
+    registry = "docker.io/umamaheswariselvaraj/flask"
+    registry_mysql = "docker.io/umamaheswariselvaraj/mysql"
     dockerImage = ""
   }
 
@@ -11,14 +11,13 @@ pipeline {
   
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/mgsgoms/Docker-Project.git'
+        git 'https://github.com/umamaheswariselvarj/Docker-Project.git'
       }
     }
 
     stage('Build image') {
       steps{
-        script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        sh 'docker build -t "docker.io/cubensquare/flask:$BUILD_NUMBER"
         }
       }
     }
@@ -26,7 +25,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "" ) {
+          docker.withRegistry('https://docker.io', 'uma') {
             dockerImage.push()
           }
         }
