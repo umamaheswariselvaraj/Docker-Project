@@ -17,7 +17,7 @@ pipeline {
 
     stage('Build image') {
       steps{
-        sh 'docker build -t "docker.io/cubensquare/flask:$BUILD_NUMBER"
+        sh 'docker build -t "docker.io/umamaheswariselvaraj/flask:$BUILD_NUMBER"'
         }
       }
     }
@@ -25,7 +25,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry('https://docker.io', 'uma') {
+          docker.withRegistry('https://docker.io', 'Docker-Credentials') {
             dockerImage.push()
           }
         }
@@ -41,8 +41,8 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-       sh 'docker build -t "docker.io/cubensquare/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-        sh 'docker push "docker.io/cubensquare/mysql:$BUILD_NUMBER"'
+       sh 'docker build -t "docker.io/umamaheswariselvaraj/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
+        sh 'docker push "docker.io/umamaheswariselvaraj/mysql:$BUILD_NUMBER"'
         }
       }
     stage('Deploy App') {
