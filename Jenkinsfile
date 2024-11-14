@@ -20,7 +20,7 @@ pipeline {
         sh 'docker build -t "docker.io/umamaheswariselvaraj/flask:$BUILD_NUMBER"'
         }
       }
-    }
+    
 
     stage('Push Image') {
       steps{
@@ -54,5 +54,6 @@ pipeline {
     }
 
   }
+}
 
 
