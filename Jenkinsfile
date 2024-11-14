@@ -25,7 +25,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry('https://docker.io', 'Docker-Credentials') {
+          docker.withRegistry('https://docker.io', 'uma-id') {
             dockerImage.push()
           }
         }
