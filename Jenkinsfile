@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub or another source
-                git branch: 'master', url: 'https://github.com/sakshara-github/Docker-Project.git'
+                git branch: 'master', url: 'https://github.com/umamaheswariselvaraj/Docker-Project.git'
             }
         }
 
