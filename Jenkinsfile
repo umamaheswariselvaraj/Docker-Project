@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "umamaheswariselvaraj/pythonflaskapp"
         DOCKER_IMAGE_SQL = "umamaheswariselvaraj/sqlapp"
         DOCKER_TAG = "latest"
-        KUBECONFIG = '/home/sakshara479/.kube/config' 
+        KUBECONFIG = '/home/monika/.kube/config' 
         DOCKER_CREDENTIALS = 'dockerhub'
     }
 
@@ -50,6 +50,5 @@ pipeline {
                     }
                 }
             }
-        
-    
-
+    }
+}
