@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE_SQL = "umamaheswariselvaraj/sqlapp"
         DOCKER_TAG = "latest"
         KUBECONFIG = '/home/monika/.kube/config' 
-        DOCKER_CREDENTIALS = 'dockerhub'
+        DOCKER_CREDENTIALS = 'uma-id'
     }
 
     stages {
