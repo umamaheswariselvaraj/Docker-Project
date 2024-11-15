@@ -33,13 +33,7 @@ pipeline {
       }
     }
 
-    stage('current') {
-      steps{
-        dir("${env.WORKSPACE}/mysql"){
-          sh "pwd"
-          }
-      }
-   }
+    
    stage('Build mysql image') {
      steps{
        sh 'docker build -t "docker.io/umamaheswariselvaraj/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
