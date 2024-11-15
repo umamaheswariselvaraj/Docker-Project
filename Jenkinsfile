@@ -3,7 +3,8 @@ pipeline {
   environment {
     registry = "docker.io/umamaheswariselvaraj/flask"
     registry_mysql = "docker.io/umamaheswariselvaraj/mysql"
-    dockerImage = ""
+    dockerImage = "latest"
+    Docker_Credentials = 'uma-id'
   }
 
   agent any
@@ -25,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry('https://docker.io', 'uma-id') {
+          docker.withRegistry('https://docker.io', 'Docker_Credentials') {
             dockerImage.push()
           }
         }
